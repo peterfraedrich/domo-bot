@@ -1,14 +1,13 @@
-// HAL
+// domo
 
-'use strict';
-var Hal = require('./bot_modules/hal_framework.js')
+var Domo = require('./domo_framework.js')
 
 var token = process.env.SLACK_API_KEY || require('./token')
-var name = 'hal'
+var name = 'domo'
 
-var hal = new Hal({
+var domo = new Domo({
     token: token,
     name: name
 })
 
-hal.run()
+domo.run()
