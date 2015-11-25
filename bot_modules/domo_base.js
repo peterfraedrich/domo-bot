@@ -27,6 +27,8 @@ domo_base.prototype._onMessage = function (message) {
 	} else if (msg[0].toLowerCase() == 'domo' && msg.length > 1) {
 		if (msg[1].toLowerCase() == 'yo') {
 			this._yo(message) // respond with yo
+		} else if (msg[1].toLowerCase() == 'hey' && (msg[2].toLowerCase() == 'shorty' || msg[2].toLowerCase() == 'shawty')) {
+			this._shorty(message) // easter egg?
 		} else if (msg[1].toLowerCase() == 'help') {
 			this._help(message) // show the help text
 		} else if (msg[1].toLowerCase() == 'ping') {
@@ -51,12 +53,15 @@ domo_base.prototype._yo = function (message) {
 	this.postMessage(message.channel, reply, {as_user: true})
 }
 
+domo_base.prototype._shorty = function (message) {
+	this.postMessage(message.channel, 'http://static.fjcdn.com/pictures/Go_43c66b_1784287.jpg', {as_user: true})
+}
+
 domo_base.prototype._help = function (message) {
 	var txt = []
 	txt.push('DOMO help text!')
 	txt.push('---')
-	txt.push('DOMO tries to be the friendly Slack bot that does helpful things.')
-	txt.push('\r')
+	txt.push('DOMO tries to be the friendly Slack bot that does helpful things.\r')
 	txt.push('Available commands: (domo [command] [params])')
 	txt.push('>> yo')
 	txt.push('Holla at DOMO.\r')
@@ -243,7 +248,6 @@ domo_base.prototype._unix = function (message) {
 				}
 			}
 		}
-		console.log(msg)
 		// combine everything after 'unix' into a command for child_process
 		var cmd = ''
 		for (var i = 0; i < msg.length; i++) {
@@ -252,7 +256,6 @@ domo_base.prototype._unix = function (message) {
 			}
 			cmd = cmd + ' ' + msg[i]
 		}
-		console.log(cmd)
 		exec(cmd, function(error, stdout, stderr) {
 			if (error) {
 				self.postMessage(message.channel, 'There was an error!\n```'+error+'```', {as_user: true})
