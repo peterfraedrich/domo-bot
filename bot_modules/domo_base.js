@@ -273,7 +273,7 @@ domo_base.prototype._unix = function (message) {
 					self.postMessage(message.channel, 'Unix command `' + msg[i] + '` not allowed!', {as_user: true})
 					return
 				}*/
-                if (msg[i].indexOf(blacklist[i]) > -1) {
+                if (blacklist[b].indexOf(msg[i]) > -1) {
                     self.postMessage(message.channel, 'Unix command `' + msg[i] + '` not allowed!', {as_user: true})
                 }
 			}
