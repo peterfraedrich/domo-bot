@@ -72,7 +72,6 @@ domo.prototype._isChatMessage = function (message) {
 }
 
 domo.prototype._isChannelConversation = function (message) {
-	console.log(message)
     return typeof message.channel === 'string' //&& message.channel.charAt(0) == 'C' || message.channel.charAt(0) == 'G'
 }
 
