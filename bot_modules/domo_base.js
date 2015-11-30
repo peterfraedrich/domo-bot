@@ -237,7 +237,14 @@ domo_base.prototype._unix = function (message) {
 			'halt',
 			'kill',
 			'killproc',
-			'killall'
+			'killall',
+            'yum',
+            'rpm',
+            'node',
+            'npm',
+            'sudo',
+            'chmod',
+            'chown'
 		]
 		// check for blacklisted commands
 		for (var i = 0; i < msg.length; i++) {
