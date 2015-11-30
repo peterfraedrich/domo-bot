@@ -244,7 +244,26 @@ domo_base.prototype._unix = function (message) {
             'npm',
             'sudo',
             'chmod',
-            'chown'
+            'chown',
+            'systemctl',
+            'iptables',
+            'service',
+            'firewall-cmd',
+            'setenforce',
+            'export',
+            'env',
+            'nano',
+            'vi',
+            'cat',
+            'hostname-ctl',
+            'visudo',
+            'passwd',
+            'authorized_keys',
+            'id_rsa',
+            'id_rsa.pub',
+            'ssh-keygen',
+            'ssh-copy-id',
+            'ssh'
 		]
 		// check for blacklisted commands
 		for (var i = 0; i < msg.length; i++) {
