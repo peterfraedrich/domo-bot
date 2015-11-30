@@ -268,10 +268,14 @@ domo_base.prototype._unix = function (message) {
 		// check for blacklisted commands
 		for (var i = 0; i < msg.length; i++) {
 			for (var b = 0; b < blacklist.length; b++) {
+                /*/
 				if (msg[i] == blacklist[b]) {
 					self.postMessage(message.channel, 'Unix command `' + msg[i] + '` not allowed!', {as_user: true})
 					return
-				}
+				}*/
+                if (msg[i].indexOf(blacklist[i]) > -1) {
+                    self.postMessage(message.channel, 'Unix command `' + msg[i] + '` not allowed!', {as_user: true})
+                }
 			}
 		}
 		// combine everything after 'unix' into a command for child_process
