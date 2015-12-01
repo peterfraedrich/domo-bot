@@ -257,13 +257,16 @@ domo_base.prototype._unix = function (message) {
             'cat',
             'hostname-ctl',
             'visudo',
-            'passwd',
-            'authorized_keys',
-            'id_rsa',
-            'id_rsa.pub',
-            'ssh-keygen',
-            'ssh-copy-id',
-            'ssh'
+            		'passwd',
+            		'authorized_keys',
+            		'id_rsa',
+            		'id_rsa.pub',
+            		'ssh-keygen',
+            		'ssh-copy-id',
+            		'ssh',
+			'reboot',
+			'shutdown',
+			'pkill'
 		]
 		// check for blacklisted commands
 		for (var i = 0; i < msg.length; i++) {
